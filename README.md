@@ -85,6 +85,14 @@ The followinng are the results that were reached for:
 You can download the dataset from: https://github.com/laiguokun/multivariate-time-series-data
 
 ## Environment
+### Primary environment
+The results up above were obtained on a system with the following versions:
 - Python 3.6.8
 - Tensorflow 1.11.0
-- Keras 2.1.6-tf
+- Keras 2.1.6-tf  
+
+### TensorFlow 2.0 Ready
+The model has also been tested on TF 2.0 alpha version:
+- Python 3.6.7
+- Tensorflow 2.0.0-alpha0
+- Keras 2.2.4-tf
