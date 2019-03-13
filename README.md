@@ -76,10 +76,10 @@ The followinng are the results that were reached for:
 
 | Dataset       | Width       | Horizon     | Correlation | RSE         |
 | :-------------| :-----------| :-----------| :-----------| :-----------|
-| Solar         | 28 hours    | 2 hours     | 0.9551      | 0.3049      |
-| Traffic       | 7 days      | 12 hours    | 0.8951      | 0.4086      |
-| Electricity   | 7 days      | 24 hours    | 0.8855      | 0.3746      |
-| Exchange Rate | 168 days    | 12 days     | 0.9753      | 0.1470      |
+| Solar         | 28 hours    | 2 hours     | 0.9548      | 0.3060      |
+| Traffic       | 7 days      | 12 hours    | 0.8932      | 0.4089      |
+| Electricity   | 7 days      | 24 hours    | 0.8856      | 0.3746      |
+| Exchange Rate | 168 days    | 12 days     | 0.9731      | 0.1540      |
 
 ## Dataset
 You can download the dataset from: https://github.com/laiguokun/multivariate-time-series-data
