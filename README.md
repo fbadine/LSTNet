@@ -1,5 +1,5 @@
 # LSTNet
-This repository is a Tensorflow / Keras implementation of "Modeling Long- and Short-Term Temporal Patterns with Deep Neural Networks" paper https://arxiv.org/pdf/1703.07015.pdf
+This repository is a Tensorflow / Keras implementation of __*Modeling Long- and Short-Term Temporal Patterns with Deep Neural Networks*__ paper https://arxiv.org/pdf/1703.07015.pdf
 
 This implementation has been inspired by the following Pytorch implementation https://github.com/laiguokun/LSTNet
 
@@ -13,8 +13,10 @@ Clone this repository:
 ```shell
 git clone https://github.com/fbadine/LSTNet.git
 cd LSTNet
-mkdir log/ save/
+mkdir log/ save/ data/
 ```
+
+Download the dataset from https://github.com/laiguokun/multivariate-time-series-data and copy the text files into LSTNet/data/
 
 ## Usage
 ### Training
@@ -45,9 +47,9 @@ The following are the parameters that the python script takes along with their d
 | --CNNKernel       |6                   |CNN filter size that will be (CNNKernel, number of multivariate timeseries)<br>A value of 0 will remove this layer|
 | --GRUUnits        |100                 |Number of hidden states in the GRU layer|
 | --SkipGRUUnits    |5                   |Number of hidden states in the SkipGRU layer|
-| --skip            |24                  |Number of timeseries to skip.<br>A value of 0 will remove this layer|
+| --skip            |24                  |Number of timeslots to skip.<br>A value of 0 will remove this layer|
 | --dropout         |0.2                 |Dropout frequency|
-| --highway         |24                  |Number of timeseries values to consider for the linear layer (AR layer)|
+| --highway         |24                  |Number of timeslots values to consider for the linear layer (AR layer)|
 | --initializer     |glorot_uniform      |The weights initialiser to use|
 | --loss            |mean_absolute_error |The loss function to use for optimisation|
 | --optimizer       |Adam                |The optimiser to use<br>Accepted values:<br> - SGD<br> - RMSprop<br> - Adam|
@@ -58,7 +60,7 @@ The following are the parameters that the python script takes along with their d
 | --no-train        |                    |Do not train the model|
 | --no-validation   |                    |Do not validate the model|
 | --test            |                    |Evaluate the model on the test data|
-| --load            |None                |Location and Name of the file to load a pretrained model from as follows:<br> - Model in filename.json<br> - Weights in filename.h5|
+| --load            |None                |Location and Name of the file to load a pre-trained model from as follows:<br> - Model in filename.json<br> - Weights in filename.h5|
 | --save            |None                |Full path of the file to save the model in as follows:<br> - Model in filename.json<br> - Weights in filename.h5<br>This location is also used to save results and history as follows:<br> - Results in filename.txt<br> - History in filename_history.csv if --savehistory is passed|
 | --no-saveresults  |                    |Do not save results|
 | --savehistory     |                    |Save training / validation history in file as described in parameter --save above|
@@ -72,7 +74,7 @@ The following are the parameters that the python script takes along with their d
 
 
 ## Results
-The followinng are the results that were reached for:
+The followinng are the results that were obtained:
 
 | Dataset       | Width       | Horizon     | Correlation | RSE         |
 | :-------------| :-----------| :-----------| :-----------| :-----------|
@@ -82,11 +84,15 @@ The followinng are the results that were reached for:
 | Exchange Rate | 168 days    | 12 days     | 0.9731      | 0.1540      |
 
 ## Dataset
-You can download the dataset from: https://github.com/laiguokun/multivariate-time-series-data
+As described in the paper the data is composed of 4 publicly available datasets downloadable from https://github.com/laiguokun/multivariate-time-series-data:
+- __Traffic:__ A collection of 48 months (2015-2016) hourly data from the California Department of Transportation
+- __Solar Energy:__ The solar power production records in 2006, sampled every 10 minutes from 137 PV plants in the state of Alabama
+- __Electricity:__ Electricity consumption for 321 clients recorded every 15 minutes from 2012 to 2014
+- __Exchange Rate:__ A collection of daily average rates of 8 currencies from 1990 to 2016
 
 ## Environment
 ### Primary environment
-The results up above were obtained on a system with the following versions:
+The results were obtained on a system with the following versions:
 - Python 3.6.8
 - Tensorflow 1.11.0
 - Keras 2.1.6-tf  
