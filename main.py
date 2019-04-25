@@ -64,7 +64,7 @@ if __name__ == '__main__':
     lstnet_init = LSTNetInit(args)
     
     # Initialise logging
-    log = LogInit("lstnet", lstnet_init.logfilename, lstnet_init.debuglevel, lstnet_init.log)
+    log = LogInit(logger_name, lstnet_init.logfilename, lstnet_init.debuglevel, lstnet_init.log)
     log.info("Python version: %s", sys.version)
     log.info("Tensorflow version: %s", tf.__version__)
     log.info("Keras version: %s ... Using tensorflow embedded keras", tf.keras.__version__)
