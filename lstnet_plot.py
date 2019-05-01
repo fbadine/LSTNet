@@ -63,9 +63,13 @@ def AutoCorrelationPlot(Data, init):
         fig.canvas.set_window_title('Auto Correlation')
         plt.show()
 
+        if init.save_plot is not None:
+            log.debug("Saving autocorrelation plot to: %s", init.save_plot + "_autocorrelation.png")
+            fig.savefig(init.save_plot + "_autocorrelation.png")
 
-def PlotHistory(history, metrics):
-    if history and metrics:
+
+def PlotHistory(history, metrics, init):
+    if history is not None and metrics is not None and init is not None:
         log.info("Plotting history ...")
 
         # Number of keys present in the history dictionary
@@ -126,6 +130,9 @@ def PlotHistory(history, metrics):
         fig.canvas.set_window_title('Training History')
         plt.show()
 
+        if init.save_plot is not None:
+            log.debug("Saving training history plot to: %s", init.save_plot + "_training.png")
+            fig.savefig(init.save_plot + "_training.png")
 
 def PlotPrediction(Data, init, trainPredict, validPredict, testPredict):
     if Data is not None and init is not None:
@@ -222,3 +229,7 @@ def PlotPrediction(Data, init, trainPredict, validPredict, testPredict):
         fig.canvas.set_window_title('Prediction')
 
         plt.show()
+
+        if init.save_plot is not None:
+            log.debug("Saving prediction plot to: %s", init.save_plot + "_prediction.png")
+            fig.savefig(init.save_plot + "_prediction.png")

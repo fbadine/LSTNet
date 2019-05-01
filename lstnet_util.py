@@ -91,6 +91,11 @@ class LSTNetInit(object):
     #                        Default: 0
     #    autocorrelation: The number of the random series that you wish to plot their autocorrelation. The value must be less or equal to the number of series available
     #                        Default: None
+    #    save_plot:       Location and Name of the file to save the plotted images to as follows:
+    #                           Autocorrelation in "save_plot_autocorrelation.png"
+    #                           Training results in "save_plot_training.png"
+    #                           Prediction in "save_plot_prediction.png"
+    #                        Default: None
     #    log:             Whether to generate logging
     #                        Default: True
     #    debuglevel:      Logging debuglevel.
@@ -138,6 +143,7 @@ class LSTNetInit(object):
             self.predict         =     args["predict"]
             self.series_to_plot  =     args["series_to_plot"]
             self.autocorrelation =     args["autocorrelation"]
+            self.save_plot       =     args["save_plot"]
             self.log             = not args["no_log"]
             self.debuglevel      =     args["debuglevel"]
             self.logfilename     =     args["logfilename"]
@@ -174,6 +180,7 @@ class LSTNetInit(object):
             self.predict         =     args.predict
             self.series_to_plot  =     args.series_to_plot
             self.autocorrelation =     args.autocorrelation
+            self.save_plot       =     args.save_plot
             self.log             = not args.no_log
             self.debuglevel      =     args.debuglevel
             self.logfilename     =     args.logfilename
@@ -213,6 +220,7 @@ class LSTNetInit(object):
         log.debug("Plot: %s", self.plot)
         log.debug("Predict: %s", self.predict)
         log.debug("Series to plot: %s", self.series_to_plot)
+        log.debug("Save plot: %s", self.save_plot)
         log.debug("Create log: %s", self.log)
         log.debug("Debug level: %d", self.debuglevel)
         log.debug("Logfile: %s", self.logfilename)
@@ -252,6 +260,7 @@ def GetArguments():
     parser.add_argument('--series-to-plot', type=str, default='0', help='Series to plot. Default 0 (i.e. plot the first timeseries)')
     parser.add_argument('--autocorrelation', type=str, default=None,
                         help='Plot an autocorrelation of the input data. Format --autocorrelation=i,j,k which means to plot an autocorrelation of timeseries i from timeslot j to timeslot k')
+    parser.add_argument('--save-plot', type=str, default=None, help='Filename initial to save the plots to in PNG format. Default=None')
 
     parser.add_argument('--no-train', action='store_true', help='Do not train model.')
     parser.add_argument('--no-validation', action='store_true',

@@ -119,7 +119,7 @@ if __name__ == '__main__':
 
         # Plot training metrics
         if lstnet_init.plot is True:
-            PlotHistory(h.history, ['loss', 'rse', 'corr'])
+            PlotHistory(h.history, ['loss', 'rse', 'corr'], lstnet_init)
 
         # Saving model if lstnet_init.save is not None.
         # There's no reason to save a model if lstnet_init.train == False
