@@ -68,6 +68,7 @@ The following are the parameters that the python script takes along with their d
 | --plot            |                    |Generate plots|
 | --series-to-plot  |0                   |Series to plot<br>Format: series,start,end<br> - series: the number of the series you wish to plot<br> - start: start timeslot (default is the start of the timeseries)<br> - end: end timeslot (default is the end of the timeseries)|
 | --autocorrelation |None                |Autocorrelation plotting <br>Format: series,start,end<br> - series: the number of random timeseries you wish to plot the autocorrelation for<br> - start: start timeslot (default is the start of the timeseries)<br> - end: end timeslot (default is the end of the timeseries)|
+| --save-plot       | None               | Location and name of the file to save the plotted images to<br> - Autocorrelation in filename_autocorrelation.png<br> - Training history in filename_training.png<br> - Prediction in filename_prediction.png|
 | --no-log          |                    |Do not create logfiles<br>However error and critical messages will still appear|
 | --logfilename     |log/lstnet          |Full path of the logging file|
 | --debuglevel      |20                  |Logging debug level|
