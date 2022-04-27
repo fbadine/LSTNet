@@ -29,7 +29,7 @@ There are 4 different script samples to train, validate and test the model on th
 ### Predict
 In order to predict and plot traffic you will need to run `main.py` as follows (example for the electricity traffic)
 ```shell
-python3.6 main.py --data="data/electricity.txt" --no-train --load="save/electricity/electricity" --predict=all --plot --series-to-plot=0 
+python main.py --data="data/electricity.txt" --no-train --load="save/electricity/electricity" --predict=all --plot --series-to-plot=0 
 ```
 
 ### Running Options
